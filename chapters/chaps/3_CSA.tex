@@ -45,12 +45,12 @@ o	LIBE-Report: Keine Chatkontrolle, Schutz vor Verschlüsselung, Schutz von anon
 % *********
 -	Edps – European Data Protection Supervisor (europäischer Dateschutzbeauftragter)
   o	Aushebelung der sicheren Ende-zu-Ende Verschlüsselung
-    	sehr einfach den Eingriff in die Privatsphäre auf den Endgeräten auf alle Bereiche auszuweiten
-    	Chatkontrolle
+    -	sehr einfach den Eingriff in die Privatsphäre auf den Endgeräten auf alle Bereiche auszuweiten
+    -	Chatkontrolle
   o	Altersverifikation: Ausweis oder Gesicht zeigen (beides nicht anonym)
-    	Bedrohung des Rechts auf anonyme Kommunikation
+    -	Bedrohung des Rechts auf anonyme Kommunikation
   o	Netzsperren
-    	wenn nicht möglich Missbrauchsmaterial zu löschen, soll der Zugriff drauf gesperrt werden (subjektive Meinung: untaugliche Methode)
+    -	wenn nicht möglich Missbrauchsmaterial zu löschen, soll der Zugriff drauf gesperrt werden (subjektive Meinung: untaugliche Methode)
   o	„digitaler Hausarrest“ – Alterscheck vor App-Installation mit Grooming Risiko (<16)
 -	Grooming auf allen Platformen mit Kontaktaufnahmemöglichkeit möglich
 -	Wäre so als würd man Kindern verbieten rauszugehen, es könnte sie ja jemand ansprechen
@@ -61,7 +61,44 @@ o	LIBE-Report: Keine Chatkontrolle, Schutz vor Verschlüsselung, Schutz von anon
 \section{Kritik an der CSA-Verordnung}          % erstes Werten, aber aus Quellen - wer hat was dagegen
 \label{sec:CSA:Kritik}
 
-... Text ...
+... Einleitungssatz -> Kritik auf Maßnahmen bezogen
+
+\subsection*{Fehlende Privatsphäre}
+\label{subsec:CSA:Kritik:fehlendePrivatsphäre}
+
+\subsection*{Verhältnismäßigkeit}
+\label{sec:CSA:Kritik:verhaeltnismaessigkeit}
+Die geplanten Maßnahmen werden als unverhältnismäßig und wahrscheinlich wirkungslos kritisiert. Da Inhalte unabhängig vom Chat zum Beispiel zuvor verschlüsselt werden können, können die Methoden zur Überwachung einfach umgangen werden, wodurch die Verordnung einen geringen Einfluss nimmt. Daher kann der Schutz der Kinder kaum gewährleistet werden. \cite{np:meineck:2022, edri:2023}
+
+Zudem ist es umstritten, ob es der Strafverfolgung hilft, wenn sie mehr Hinweise in den Ausmaßen erhalten. \cite{np:meineck:2022} (s. \ref{subsec:CSA:Kritik:technKritik} technische Kritik)
+
+\subsection*{Schwächt Sicherheit}
+\label{subsec:CSA:Kritik:schwaechtSicherheit}
+
+\subsection*{Unklare Kriterien}
+\label{subsec:CSA:Kritik:unklareKriterien}
+
+\subsection*{Technische Kritik -> besserer Begriff benötigt}
+\label{subsec:CSA:Kritik:technKritik}
+
+Die Chatkontrolle ist, vor allem auf Grooming bezogen, sehr fehleranfällig. Die erfasste Genauigkeit ist dabei mit 88\% nicht ausreichend. \cite{edri:2023} \cite{np:meineck:2022} Es gibt zu viele false-positives, also Situationen die fehlerhaft als kritisch erkannt wurden, obwohl sie unschädlich sind. Dabei muss die Suche nach unbekanntem Material eingestellt werden, da die Konsequenzen zu hoch sind. Hierzu zählt ebenfalls die Alterskontrolle per Bilderkennung \cite{np:meineck:2022}
+
+Die Technik kann nicht unterscheiden, ob es sich um die Selbstdarstellung zwischen einwilligenden Jugendlichen oder CSAM handelt. \cite{edri:2023}  Jeder gemeldete Fall ist jedoch direkt ein Verdacht auf die schwere Straftat der Kindesmisshandlung. \cite{np:meineck:2022}
+
+Daten lesen heißt Daten verarbeiten und somit Daten speichern. Hierbei kann es zu Profiling, ** Definition Profiling **, kommen. (Quelle Definition) Zum einen ist der Verdacht im Profil einer gemeldeten Person in deren Historie gespeichert. Zum anderen wird es in den Algorithmen immer einen Bias geben, wodurch Diskriminierung, zum Beispiel in Form von schnellerem Anschlagen wenn bestimmte Personengruppen im Material sichtbar sind, gefördert wird. \cite{np:meineck:2022}
+
+Es ist mit einem erheblichen Mehraufwand zu rechnen, da sich auf die Maßnahmen nicht verlassen werden kann und diese nachkontrolliert werden müssen. \cite{np:meineck:2022}
+\label{Mehraufwand}
+
+Das FBI warnt davor, dass diese Mengen an Daten nicht verarbeitbar sind. Sie selbst seien mit den bereits aufgedeckten Fällen überlastet und müssten priorisieren. Wenn die Ressourcen zur Verarbeitung der Daten also nicht gegeben sind, kann diese Maßnahme nicht zu einer Ausweitung der Strafverfolgung führen. \cite{edri:2023}
+\cite{np:meineck:2022}
+
+%Nachträgliche Überprüfung, weil kein Verlass
+%-> nicht stemmbarer Mehraufwand -> Verhältnismäßigkeit
+%-> schwelle an Strafverfolgungsbehörde zu gering
+
+Die Folgenabschätzung der EU-Kommision erfasst selbst, \glqq dass es keine Scanmethoden gibt, die ein gutes Maß an Datenschutz, Sicherheit und Durchführbarkeit bieten\grqq{}. \cite{edri:2023}
+
 
 % ******************************************************
 % Formulierungshilfen - Vergleich von Positionen
