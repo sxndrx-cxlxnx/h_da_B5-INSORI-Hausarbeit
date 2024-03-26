@@ -1,11 +1,17 @@
-\chapter{Grundlagen} %- 3 Seiten
+\chapter{Grundlagen} %- 1-2 Seiten
 \label{ch:Grundlagen}
 
 ... Text ...
 
-% ******************************************************************************************************
-\section{Definitionen Datenschutz, Privatheit}      % Privatsphäre als anderes Welt
-\label{sec:Grundlagen:DefDatenschutzPrivatheit}
+% ***************************************************************************************************
+% ***************************************************************************************************
+\section{Grundrechte}
+\label{sec:Grundlagen:DefGrundrechte}
+
+
+% ***************************************************************************************************
+\subsection*{Datenschutz}
+\label{subsec:Grundlagen:DefDatenschutz}
 
 ... Text ...
 % generell Definition der Angesprochenen Grundrechte?
@@ -15,57 +21,41 @@ Privatheit -> das von Hanna Arendt ("Notizen Prof")
 %o	Dafür da, dass Gesetze auch auf Netzebene gelten
 %o	Compliancepflicht des Anbieters
 
-
-% ******************************************************************************************************
-\section{Definitionen Cybergrooming, CSAM}
-\label{sec:Grundlagen:DefGroomingCSAM}
-
-... Text ...
-
-% ******************************************************************************************************
-\section{Abgrenzung - auf welche Kontrollen gehe ich ein}
-\label{sec:Grundlagen:Themenabgrenzung}
-
-Aufdeckung von:
-Bekanntem CSAM (Child Sexual Abuse Material)
-Unbekanntem CSAM
-Grooming
-
-Definition (Cyber)Grooming:
--> gezielte Kontaktaufnahme Erwachsener mit Minderjährigen -> Missbrauchsabsicht, stufenweise Vertrauen erschleichen
+% ***************************************************************************************************
+\subsection*{Privatheit}      % Privatsphäre als anderes Welt
+\label{subsec:Grundlagen:DefPrivatheit}
 
 
-% -----------------------------------------------------------------------------------------------
-\subsection*{E2E Verschlüsselung}
-\label{sec:Grundlagen:E2E}
+% ***************************************************************************************************
+% ***************************************************************************************************
+\section{Straftaten}
+\label{sec:Grundlagen:DefStraftaten}
+
+% ***************************************************************************************************
+\subsection*{CSAM}
+\label{subsec:Grundlagen:DefCSAM}
+
+\cite{abelson:2024}
+In the case of child sex-abuse images, it is an offense in many jurisdictions to possess such material; providers who come across it are required to report it immediately and destroy it. National abuse organizations such as NCMEC in the USA and the IWF in the UK receive these reports and have legal cover to retain and curate such material. 
+
+% ***************************************************************************************************
+\subsection*{Cybergrooming}
+\label{subsec:Grundlagen:DefGrooming}
 
 ... Text ...
 
-o	Wie funktioniert Ende-zu-Ende verschlüsselung
--> was wird sichergstellt auf welcher Ebene (Daten nicht bearbeiten können, keiner kann reinschauen, auf allen Zwischenstellen sicher)
+\cite{csa_verordnung}
+-	Material über sexuellen Kindesmissbrauch ist ein Produkt des körperlichen sexuellen Missbrauchs von Kindern.
+-> Seine Aufdeckung und Meldung ist notwendig, um seine Produktion und Verbreitung zu verhindern, und ein wichtiges Mittel für die Identifizierung und Unterstützung der Opfer. 
+-	der sexuelle Missbrauch und die sexuelle Ausbeutung von Kindern \& Material über sexuellen Kindesmissbrauch seit 2011 verabschiedeten Richtlinie zur Bekämpfung des sexuellen Missbrauchs von Kindern  -> in der EU strafbar
+-> Internet = besondere Herausforderung
+end \cite{csa_verordnung}
 
 
-% -----------------------------------------------------------------------------------------------
-%\subsection*{Client-Side Scanning - die Aushebelung der E2E}
-\subsection*{Client-Side Scanning}
-\label{sec:Grundlagen:ClientSideScanning}
 
-% was ist das
-% wie funktioniert das
-% evtl. mögliche Folgen/Auswirkungen davon?
+% ***************************************************************************************************
+% ***************************************************************************************************
+\section{Ende-zu-Ende Verschlüsselung}
+\label{sec:Grundlagen:DefE2E}
 
-... Text ...
-
-„Inhalte durchleuchten bevor sie verschlüsselt werden“
-
-o	Chatkontrolle 1.0 (Client-Side-Scanning)
--> Nachricht von Provider untersucht
--> wenn Classifier anschlägt -> an Behörbe weitergeleitet und untersucht
--> nachricht kann bei e2e nur angesehen werden, bevor sie verschlüsselt wurde
--> Aufbruch der Verschlüsselung -> keine vertrauliche Kommunikation mehr
-
-\url{https://link.springer.com/chapter/10.1007/978-3-031-29371-9_6} S. 100\\
-
-\url{https://netzpolitik.org/2023/ueberwachung-eu-innenausschuss-stimmt-fuer-die-ablehnung-der-anlasslosen-chatkontrolle/}
-Technologie des Client-Side-Scannings möglich, also einer Suchfunktion auf den Endgeräten der Menschen. Damit lassen sich Inhalte durchleuchten, bevor sie gegebenenfalls verschlüsselt werden.
-% ******************************************************************************************************
+Die \ac{E2EE}, engl. \glqq End-to-End Encryption\grqq{}, verschlüsselt einen Kommunikationsweg zwischen zwei Nutzern, die meist über einen Server miteinander kommunizieren. Diese besitzen die Schlüssel zum Ver- und Entschlüsseln ihrer Nachrichten. Obwohl die Nachrichten der beiden Nutzer den Server durchlaufen, wird durch \ac{E2EE} sichergestellt, dass der Server diese nicht lesen oder verarbeiten kann. \cite{alatawi:2023, portnoy:2019}

@@ -43,6 +43,7 @@
 %*************************************************************************
 \input{hdathesis-config}
 \input{classicthesis-config}
+\newcommand*{\fullref}[1]{\hyperref[{#1}]{\autoref*{#1} \nameref*{#1}}} % one single link
 
 %*************************************************************************
 % Bibliographies
@@ -136,7 +137,7 @@
 %*************************************************************************
 %\cleardoublepage\include{frontbackmatter/Bibliography}
 \cleardoublepage
-\include{chapters/chaps/10_Mitschriften}
+%\include{chapters/chaps/10_Mitschriften}
 \include{frontbackmatter/Bibliography}
 %*************************************************************************
 % Game Over: Restore, Restart, or Quit?
