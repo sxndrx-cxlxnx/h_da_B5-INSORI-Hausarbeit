@@ -1,0 +1,140 @@
+%\chapter{Hauptteil} %- 3 Seiten
+%In einer theoretischen Hausarbeit wird von Ihnen zusätzlich verlangt,
+%• Argumentationen und Positionen verschiedener Autoren gegeneinander abzuwägen, zu diskutieren und mit Literatur zu belegen,
+%• den Lesenden den Aufbau und den roten Faden der Argumentation zu verdeutlichen.
+
+
+%\section{Folgen von \glqq ohne Verschlüsselung\grqq{}}
+
+%\chapter{CSA-Verordnung - der Gesetzesentwurf der EU}
+\chapter{CSA-Verordnung}
+\label{ch:CSA}
+
+% ******************************
+% Einleitungssatz & Begriffsdefinition
+Aufbauend auf den im vorherigen Kapitel definierten Begriffen soll im Zuge dieser Arbeit die aktuell diskutierte, ausstehende \ac{CSA-VO} in den Fokus gerückt werden.\\
+Die \ac{CSA-VO} ist ein Vorschlag der Europäischen Kommission für eine Verordnung \glqq zur Festlegung von Vorschriften zur Prävention und Bekämpfung des sexuellen Missbrauchs von Kindern\grqq{} \cite{steinebach:2023:Medien} (\ac{CSA}) im Internet. Dessen vorgesehene Umsetzung wird in den letzten Jahren stark kritisiert \cite{bundestag:2022, csa_verordnung, steinebach:2023:Medien}.
+
+% ************************************************************************************************
+% ************************************************************************************************
+% ************************************************************************************************
+%\section{Idee}   % Grundgedanke / Inhalt / Ziel
+\section{Ziel der Verordnung}
+\label{sec:CSA:Idee}
+
+In den Grundrechten ist verankert, dass Kinder den „Anspruch auf den Schutz und die Fürsorge, die für ihr Wohlergehen notwendig sind“ \cite{eu_charta_der_grundrechte}, haben. Auch im digitalen Raum müssen Kinder gleichermaßen geschützt werden. Dazu zählt unter anderem der Schutz vor sexuellem Missbrauch, welcher auch in Form der Verbreitung von \ac{CSAM} erfolgt. Dazu sollen die Prävention sowie die Strafverfolgungsmaßnahmen verbessert werden \cite{csa_verordnung}.
+
+Der Vorschlag baut auf der \ac{DSGVO} auf. Diese besagt, dass personenbezogene Daten zu Aufdeckungsarbeiten verwertet werden dürfen. Inwieweit dies jedoch für Anbieter interpersoneller elektronischer Kommunikation, wie z.B. von Chatdiensten, gilt, wird derzeit noch verhandelt \cite{csa_verordnung}.
+
+Ziel der \ac{CSA-VO} ist also der Ausbau des Schutzes der Kinder vor sexuellem Missbrauch und die Wahrung ihrer Grundrechte \cite{csa_verordnung}.
+
+% ************************************************************************************************
+% ************************************************************************************************
+% ************************************************************************************************
+\section{Chatkontrolle} % konkrete Umsetzung, wertfrei
+\label{sec:CSA:Umsetzung}
+Um dieses Ziel umzusetzen, soll nach \ac{CSAM} gesucht werden. Dabei sollen private Chats auf bereits bekannte Inhalte sowie neue und noch ungemeldete Inhalte untersucht werden. Die Chats sollen ebenfalls nach Grooming inspiziert und diese Vergehen im Anschluss an die Strafverfolgung gemeldet werden \cite{csa_verordnung}.
+
+%Die \ac{EU}-Kommission hatte im Mai 2022 die Pläne für eine Chatkontrolle vorgelegt \cite{schulzki-haddouti:2023}
+
+% ************************************************************************************************
+%\subsection*{Client Side Scanning}
+%\label{subsec:CSA:Umsetzung:CSS}
+Da wegen der \ac{E2EE} kein Server-Side-Scanning möglich ist, wird derzeit das \ac{CSS} diskutiert. Das \ac{CSS}, in den Medien auch \glqq Chatkontrolle\grqq{} \cite{csa_verordnung} genannt, ist der offizielle Vorschlag und die derzeit einzige Möglichkeit zur Umsetzung der Anforderungen der \ac{CSA-VO} \cite{abelson:2024}.
+
+Es werden alle Inhalte eines Chats gescannt, noch bevor sie verschlüsselt werden. Dazu gehören Texte, Bilder, Audio- und Videodateien  \cite{alatawi:2023, np:reuter:2023:eu-innenausschuss}. Technisch gesehen werden die Eigenschaften der \ac{E2EE} beibehalten \cite{portnoy:2019}, jedoch umgeht das \ac{CSS} die verschlüsselte Kommunikation (s. \autoref{subsec:CSA:Kritik:fehlendePrivatsphäre}).
+
+\begin{figure}[!h]
+ \centering
+ \includegraphics[width=0.65\textwidth]{gfx/content/CSS_dt_abelson_2024.PNG}
+ \caption{Client-Side-Scanning \cite{abelson:2024}}
+ \label{fig:CSS}
+\end{figure}
+
+%\subsection*{Perzeptuelles Hashing}
+%\label{subsec:CSA:Umsetzung:Hashing}
+\noindent
+Die gescannten Daten erhalten durch das Perzeptuelle Hashing eine einzigartige Signatur (Hash). Der Hash wird mit bereits bekannten Hashes von gesuchtem \ac{CSAM} aus einer Datenbank verglichen (s. \autoref{fig:CSS}). Perzeptuelles Hashing ist ideal, um bereits bekannte Bilder wiederzuerkennen, da der Algorithmus resilient gegen kleine Änderungen am Bild ist und durch die kurzen Hashes sehr effizient ausführbar ist. Da der Client die Datenbank auf seinem Endgerät speichern muss, ist es ebenfalls vorteilhaft, die Inhalte in Hashes zu speichern, da somit keine lokale Vergleichskopie von \ac{CSAM} benötigt wird \cite{abelson:2024, portnoy:2019}.
+
+%\subsection*{Maschinelles Lernen}
+%\label{subsec:CSA:Umsetzung:MaschinellesLernes}
+Eine weitere Methode zur Identifizierung ist \ac{ML}. Dieses wird mit harmlosen und gesuchten Inhalten trainiert, wodurch es in der Lage ist, auch bisher unbekanntes \ac{CSAM} aufzudecken. Um ein \ac{ML}-Modell zu trainieren, braucht es jedoch eine Vielzahl an Trainingsdaten und menschliche Überprüfer. Diese Personen klassifizieren die Daten und geben gleichzeitig Korrekturen und Feedback an das System zurück, sodass die Genauigkeit der künstlichen Intelligenz gesteigert werden kann. Auch in Randfällen kommen sie zum Einsatz, um neue Arten des Missbrauchs aufdecken und klassifizieren zu können \cite{abelson:2024}.
+
+Die Datenbanken mit den Indikatoren sollen vom \ac{EU}-Zentrum bereitgestellt und gewartet werden. Dabei sollen sie in Zusammenarbeit mit Europol Meldungen der Anbieter von Hosting- oder interpersonellen Kommunikationsdiensten nachträglich prüfen, um offensichtlich falsch-positive Meldungen herauszufiltern. Positive Meldungen werden an die zuständige Strafverfolgungsbehörde weitergeleitet \cite{csa_verordnung}.
+
+% ************************************************************************************************
+% ************************************************************************************************
+% ************************************************************************************************
+\chapter{Kritik an der CSA-Verordnung}          % erstes Werten, aber aus Quellen - wer hat was dagegen
+\label{sec:CSA:Kritik}
+% hi Yannick - **knuddel** --- hiiii **knuddel** naaaa du **knuuuuuuuuuuuuuuuddel**, naaaa **knuuuuuuuuuuuuuuuddel**
+
+Die \ac{CSA-VO} wird stark kritisiert. Dabei ist darauf hinzuweisen, dass nicht das Ziel, der Kinderschutz, sondern die Umsetzung und vorgeschlagenen Maßnahmen infrage stehen \cite{DSK:2023:Brief}. Folgende Kritikpunkte können zusammengefasst werden:
+
+% -----------------------------------------------
+
+\subsection*{Schwächt Sicherheit}
+\label{subsec:CSA:Kritik:schwaechtSicherheit}
+Die Chatkontrolle schwächt die Sicherheit digitaler Nachrichten, da die \ac{E2EE} umgangen wird \cite{DSK:2023:Brief, edri:2023, np:meineck:2022}. In einer Stellungnahme des Europäischen Datenschutzbeauftragten und des Europäischen Datenschutzausschusses wurde jedoch festgehalten, dass keine Maßnahme die Verschlüsselung brechen oder umgehen darf \cite{np:meineck:2022}.
+
+Dies hätte signifikante \glqq Folgen für die Cybersicherheitslandschaft in der \acs{EU}\grqq{} \cite{ blacknightsolutions:2024}. Es kann Sicherheitslücken schaffen, die zunehmend für illegale Absichten ausgenutzt werden. Der Nutzer kann nicht erkennen, ob seine Daten unbefugt ausgelesen werden, weshalb auf diese Maßnahme verzichtet werden soll \cite{DSK:2023:Brief, edri:2023, portnoy:2019}.
+
+% -----------------------------------------------
+
+\subsection*{Fehlende Privatsphäre}
+\label{subsec:CSA:Kritik:fehlendePrivatsphäre}
+
+Das \ac{CSS} beeinträchtigt eine vertrauliche Kommunikation und somit die Kommunikationsfreiheit \cite{DSK:2023:Brief, edri:2023}. Dadurch sind zum Beispiel Geschäftsgeheimnisse, Innovationen, Anwaltsgeheimnisse, die journalistische Freiheit, sowie die Wettbewerbsfähigkeit und Souveränität der \ac{EU}-Industrie gefährdet \cite{edri:2023}.
+
+In der \ac{CSA-VO} wird betont, dass ein Gleichgewicht zwischen den Maßnahmen zum Schutz der Kinder sowie ihren Grundrechten hergestellt werden muss \cite{csa_verordnung}. Jedoch werden die Artikel 7 und 8, die Rechte auf Privatsphäre und Datenschutz, der \ac{EU}-Charta der Grundrechte (s. \cite{eu_charta_der_grundrechte}), durch die Umsetzung verletzt \cite {DSK:2023:Brief, edri:2023, blacknightsolutions:2024}. Somit ist die Chatkontrolle grundrechtswidrig \cite{np:biselli:_2022}.
+
+Damit Inhalte zuverlässig gefiltert werden können, müsste die Technologie bei allen Nutzern implementiert werden. Somit besteht die Gefahr einer anlasslosen Massenüberwachung, welche gegen das \ac{EU}-Verbot der allgemeinen Überwachung verstößt \cite{DSK:2023:Brief, edri:2023, np:meineck:2022}.
+
+Auch die Einführung von Alterskontrollen ist stark umstritten, da diese einen weiteren Verstoß gegen das Recht auf Privatsphäre darstellen. Eine Verifikation über eine Online-Ausweis-Funktion oder die Bilderkennung per Kamera bedroht die Möglichkeit auf anonyme Kommunikation. Dabei ist ebenso ein Profiling (s. \autoref{Profiling} Technologische Kritikpunkte) möglich \cite{np:meineck:2022}.
+
+% -----------------------------------------------
+
+\subsection*{Technologische Kritikpunkte}
+\label{subsec:CSA:Kritik:technKritik}
+
+Die Chatkontrolle ist, vor allem auf Grooming bezogen, sehr fehleranfällig. Die erfasste Genauigkeit ist dabei mit 88\% nicht ausreichend \cite{edri:2023, np:meineck:2022}. Es gibt zu viele \glq false-positives\grq{}, also Situationen, die fehlerhaft als kritisch erkannt wurden. Aus diesem Grund ist die Suche nach unbekanntem im Vergleich zu bekanntem \ac{CSAM} besonders anspruchsvoll \cite{np:meineck:2022} (s. \autoref{sec:CSA:Umsetzung}).
+Die Technik kann nicht unterscheiden, ob es sich um die einvernehmliche Selbstdarstellung zwischen Jugendlichen oder \ac{CSAM} handelt \cite{edri:2023}. Hierzu zählt ebenfalls die Alterskontrolle per Bilderkennung. Jeder gemeldete Fall ist ein Verdacht auf eine schwere Straftat der Kindesmisshandlung \cite{np:meineck:2022}.
+
+% **knuddel****knouddel**apple strudel
+Werden Daten gelesen, bedeutet das, dass diese verarbeitet und somit gespeichert werden. Hierbei kann es zu Profiling kommen. Profiling bezeichnet die automatisierte Verarbeitung und Bewertung personenbezogener Daten, durch welche eine natürliche Person negativ beeinträchtigt werden kann \cite{dsgvo:profiling}. \label{Profiling} Zum einen ist der Verdacht in der Profilhistorie einer gemeldeten Person gespeichert. Zum anderen wird es in den Algorithmen immer einen Bias geben. Dadurch wird Diskriminierung gefördert, zum Beispiel in Form von schnellerem Anschlagen, wenn bestimmte Personengruppen im Material sichtbar sind \cite{np:meineck:2022}.
+
+Es ist mit einem erheblichen Mehraufwand zu rechnen, da sich auf die Maßnahmen nicht verlassen werden kann und diese nachkontrolliert werden müssen \cite{np:meineck:2022}.
+\label{Mehraufwand}
+
+Das Federal Bureau of Investigation (FBI) warnt davor, dass diese Mengen an Daten nicht verarbeitbar sind. Sie selbst seien mit den bereits aufgedeckten Fällen überlastet und müssten priorisieren. Wenn die Ressourcen zur Verarbeitung der Daten nicht gegeben sind, kann diese Maßnahme nicht zu einer Ausweitung der Strafverfolgung führen \cite{edri:2023}.
+
+%\cite{np:meineck:2022}
+%Nachträgliche Überprüfung, weil kein Verlass
+%-> nicht stemmbarer Mehraufwand -> Verhältnismäßigkeit
+%-> schwelle an Strafverfolgungsbehörde zu gering
+
+Die Folgenabschätzung der \ac{EU}-Kommision erfasst selbst, \glqq dass es keine Scanmethoden gibt, die ein gutes Maß an Datenschutz, Sicherheit und Durchführbarkeit bieten\grqq{} \cite{edri:2023}.
+
+% -----------------------------------------------
+
+\subsection*{Unklare Kriterien}
+\label{subsec:CSA:Kritik:unklareKriterien}
+%Anbieter schätzen ihr Risiko ein, in welchem Ausmaß auf ihrer Plattform \ac{CSAM} verbreitet werden kann. Vor allem für Chatplattformen ist das Risiko hoch \textbackslash quelle.
+%Ab wann Anbieter jedoch dazu verpflichtet werden, ist unklar. Die Kriterien für die Chatkontrolle sind somit zu subjektiv und können dazu führen, dass die Verordnung mit signifikanten Unterschieden umgesetzt wird. Auch ist die rechtliche Lage unsicher und die vorgesehenen Bedingungen somit nicht geeignet \cite{np:meineck:2022}.
+Es ist unklar, woran festgelegt wird, ob Anbieter zur Einführung der Chatkontrolle verpflichtet werden. Die Kriterien für die Chatkontrolle sind somit zu subjektiv und können dazu führen, dass die Verordnung mit signifikanten Unterschieden umgesetzt wird. Auch ist die rechtliche Lage unsicher, weshalb die vorgesehenen Bedingungen nicht geeignet sind \cite{np:meineck:2022}.
+
+% -----------------------------------------------
+
+\subsection*{Verhältnismäßigkeit}
+\label{sec:CSA:Kritik:verhaeltnismaessigkeit}
+Die geplanten Maßnahmen werden als \glqq unverhältnismäßig\grqq{} \cite{DSK:2023:Brief, edri:2023} und \glqq wahrscheinlich wirkungslos\grqq{} \cite{edri:2023} kritisiert. Beispielsweise können die Methoden zur Überwachung durch eine vorherige, von der Chatplattform unabhängige Verschlüsselung der Inhalte umgangen werden, wodurch die Verordnung einen geringen Einfluss nimmt. Daher kann der Schutz der Kinder nicht gewährleistet werden \cite{edri:2023, np:meineck:2022}.
+
+Zudem ist es umstritten, ob es der Strafverfolgung hilft, wenn sie mehr Hinweise in den Ausmaßen erhalten \cite{np:meineck:2022} (s. \autoref{subsec:CSA:Kritik:technKritik} Technologische Kritikpunkte).
+
+
+% ******************************************************
+% Formulierungshilfen - Vergleich von Positionen
+%
+% Während [Wissenschaftler/-in] die Auffassung vertritt, dass […], ist [Wissenschaftler/-in] der Ansicht, dass […]
+% Diese Frage wird kontrovers diskutiert. So stellte [Wissenschaftler/-in] fest, dass […], während [Wissenschaftler/-in] herausfand, dass […]
+% [Wissenschaftler/-in] zeigte in seiner/ihrer Studie, dass […]. [Wissenschaftler/-in] kam hingegen zu dem Ergebnis, dass […]

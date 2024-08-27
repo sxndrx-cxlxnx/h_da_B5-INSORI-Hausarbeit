@@ -43,6 +43,7 @@
 %*************************************************************************
 \input{hdathesis-config}
 \input{classicthesis-config}
+\newcommand*{\fullref}[1]{\hyperref[{#1}]{\autoref*{#1} \nameref*{#1}}} % one single link
 
 %*************************************************************************
 % Bibliographies
@@ -83,7 +84,7 @@
 %\cleardoublepage\include{frontbackmatter/Figures}
 %\cleardoublepage\include{frontbackmatter/Tables}
 %\cleardoublepage\include{frontbackmatter/Listings}
-%\cleardoublepage\include{frontbackmatter/Acronyms}
+\cleardoublepage\include{frontbackmatter/Acronyms}
 %*************************************************************************
 % Mainmatter
 %*************************************************************************
@@ -108,7 +109,7 @@
 % Hinfphrung zum Thema oder so - Hauptteil
 % Top:  3
 %-------------------------------
-\include{chapters/chaps/3_Hauptteil} % 2-3 Seiten
+\include{chapters/chaps/3_CSA} % 2-3 Seiten
 
 %-------------------------------
 % Diskussion & Fazit -> 2-3 Seiten
@@ -130,12 +131,14 @@
 \part{Appendix}
 %\include{chapters/examples/appendix01}
 %\include{chapters/examples/appendix02}
-\include{chapters/chaps/Appendix.tex}
+%\include{chapters/chaps/Appendix.tex}
 %*************************************************************************
 % Other Stuff in the Back
 %*************************************************************************
 %\cleardoublepage\include{frontbackmatter/Bibliography}
-\cleardoublepage\include{frontbackmatter/Bibliography}
+\cleardoublepage
+\include{frontbackmatter/Bibliography}
+\include{chapters/chaps/10_Mitschriften}
 %*************************************************************************
 % Game Over: Restore, Restart, or Quit?
 %*************************************************************************
